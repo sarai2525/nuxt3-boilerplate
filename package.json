@@ -10,14 +10,14 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "prepare": "husky install",
-    "lint:script": "eslint --fix --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "lint:script": "eslint --fix --ext \".js,.ts,.vue,.cjs,.mjs\" --ignore-path .gitignore .",
     "lint:prettier": "prettier --write",
-    "lint:style": "stylelint 'src/**/*.vue' --fix --config stylelint.config.cjs"
+    "lint:style": "stylelint --fix --config stylelint.config.cjs"
   },
   "lint-staged": {
-    "*.{.js,ts,vue}": "pnpm lint:script",
+    "*.{.js,ts,vue,cjs,mjs}": "nuxi typecheck && pnpm lint:script",
     "*.{md,json,yml,yaml}": "pnpm lint:prettier",
-    "*.{vue,scss}": "pnpm lint:style"
+    "*.{vue,scss,css}": "pnpm lint:style"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
