@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   ssr: true,
   srcDir: 'src',
   app: {
+    buildAssetsDir: '/something/',
     head: {
       htmlAttrs: {
         lang: 'ja',
@@ -24,6 +25,7 @@ export default defineNuxtConfig({
         target: 'esnext',
       },
     },
+
     prerender: {
       crawlLinks: true,
       failOnError: false,
