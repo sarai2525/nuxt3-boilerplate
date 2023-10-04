@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   ssr: true,
   srcDir: 'src',
   app: {
+    rootId: '__something__',
     buildAssetsDir: '/something/',
     head: {
       htmlAttrs: {
