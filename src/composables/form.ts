@@ -11,7 +11,7 @@ type FormSchema = {
     label: string
     placeholder: string
     element: string
-    rules: any
+    rules?: any
   }
 }
 
