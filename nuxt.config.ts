@@ -1,5 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
+const isDev = process.env.NODE_ENV === 'development'
+
 export default defineNuxtConfig({
   ssr: true,
   srcDir: 'src',
@@ -14,6 +16,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       link: [{ rel: 'manifest', href: '/manifest.webmanifest' }],
     },
+    buildAssetsDir: `${isDev ? '_nuxt' : 'assets'}`,
   },
   imports: {
     autoImport: false,
@@ -29,8 +32,13 @@ export default defineNuxtConfig({
       failOnError: false,
     },
   },
+  // css: ['@/assets/scss/style.scss'],
   telemetry: false,
   modules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'],
   devtools: { enabled: true },
-  runtimeConfig: {},
+  runtimeConfig: {
+    public: {
+      CONTACT_FORM_URL: process.env.CONTACT_FORM_URL || process.env.CONTACT_FORM_URL_DEV,
+    },
+  },
 })
