@@ -2,34 +2,20 @@
   <div>
     <h1>お問い合わせ</h1>
     <section class="section">
-      <section class="section">
-        <form method="post" :action="contactFormUrl" class="contact-form">
-          <div class="contact-form-raw">
-            <div class="label">お名前</div>
-            <div class="input">{{ formData?.name ?? '' }}</div>
-          </div>
-          <div class="contact-form-raw">
-            <div class="label">メールアドレス</div>
-            <div class="input">{{ formData?.email ?? '' }}</div>
-          </div>
-          <div class="contact-form-raw">
-            <div class="label">件名</div>
-            <div class="input">{{ formData?.subject ?? '' }}</div>
-          </div>
-          <div class="contact-form-raw">
-            <div class="label">お問い合わせ内容</div>
-            <div class="textarea">{{ formData?.message ?? '' }}</div>
-          </div>
-          <button class="button">送信</button>
-        </form>
-      </section>
+      <form method="post" :action="contactFormUrl" class="contact-form">
+        <div v-for="(_, keyName) of formData" :key="keyName" class="contact-form-raw">
+          <p class="label">{{ formSchema[keyName].label }}</p>
+          <p>{{ formData[keyName] }}</p>
+        </div>
+        <button class="button">送信</button>
+      </form>
     </section>
   </div>
 </template>
 <script setup lang="ts">
   import { computed } from 'vue'
   import { useSeoMeta, useRuntimeConfig } from '#imports'
-  import { useForm } from '@/composables/form'
+  import { useForm, formSchema } from '@/composables/form'
 
   useSeoMeta({
     title: '',
