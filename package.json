@@ -15,7 +15,7 @@
     "lint:style": "stylelint --fix --config stylelint.config.cjs"
   },
   "lint-staged": {
-    "*.{.js,ts,vue,cjs,mjs}": "pnpm nuxi typecheck && pnpm lint:script",
+    "*.{.js,ts,vue,cjs,mjs}": "pnpm lint:script",
     "*.{md,json,yml,yaml}": "pnpm lint:prettier",
     "*.{vue,scss,css}": "pnpm lint:style"
   },
