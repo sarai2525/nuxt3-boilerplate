@@ -1,16 +1,17 @@
+import { useSeoMeta } from '#imports';
 <template>
   <div>
     <h1>Index page</h1>
   </div>
 </template>
 <script lang="ts" setup>
-  import { useHeadMetas } from '~/composables/seoMeta'
+  import { useSeoMeta } from '#imports'
 
-  useHeadMetas({
-    title: 'Index page',
-    description: 'This is the index page',
-    ogImage: 'https://nuxtjs.org/nuxt-card.png',
-    ogUrl: 'https://nuxtjs.org',
-    robots: 'noindex',
+  useSeoMeta({
+    title: '',
+    description: '',
+    ogImage: '',
+    ogUrl: '',
+    robots: '',
   })
 </script>
