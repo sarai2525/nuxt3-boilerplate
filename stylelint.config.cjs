@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['stylelint-config-recommended-vue'],
-  ignoreFiles: ['**/node_modules/**'],
+  ignoreFiles: ['**/node_modules/**', '**/.nuxt/**', '**/dist/**'],
   rules: {},
   customSyntax: 'postcss-scss',
   overrides: [
