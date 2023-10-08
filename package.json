@@ -35,6 +35,7 @@
     "lint-staged": "^14.0.1",
     "mobile-detect": "^1.4.5",
     "nuxt": "^3.7.4",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.0.3",
     "sass": "^1.68.0",
     "sass-loader": "^13.3.2",
