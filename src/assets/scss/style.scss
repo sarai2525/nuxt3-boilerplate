@@ -1,15 +1,9 @@
 @use '@unocss/reset/tailwind.css';
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: "メイリオ", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-family: 'メイリオ', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
   font-size: 62.5%;
-  font-feature-settings: "palt";
+  font-feature-settings: 'palt';
   line-height: 1.8;
   letter-spacing: 0.28em;
 }
