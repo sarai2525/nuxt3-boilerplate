@@ -31,5 +31,6 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true
-  }
+  },
+  "rangeStrategy": "bump"
 }
