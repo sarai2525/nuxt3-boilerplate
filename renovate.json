@@ -27,5 +27,9 @@
     }
   ],
   "labels": ["renovate"],
-  "enabledManagers": ["pnpm"]
+  "enabledManagers": ["pnpm"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  }
 }
