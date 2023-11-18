@@ -28,7 +28,7 @@
     "@unocss/reset": "0.57.3",
     "@vue/eslint-config-prettier": "8.0.0",
     "dayjs": "1.11.10",
-    "eslint": "8.53.0",
+    "eslint": "8.54.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-prettier": "5.0.1",
     "husky": "8.0.3",
