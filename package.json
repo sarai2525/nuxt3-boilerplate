@@ -37,13 +37,13 @@
     "nuxt": "3.9.0",
     "postcss-scss": "4.0.9",
     "prettier": "3.1.1",
-    "sass": "1.69.5",
+    "sass": "1.69.6",
     "sass-loader": "13.3.3",
     "stylelint": "15.11.0",
     "stylelint-config-recommended-vue": "1.5.0",
     "typescript": "5.3.3",
     "vee-validate": "4.12.4",
-    "vue": "3.3.13",
+    "vue": "3.4.3",
     "vue-router": "4.2.5",
     "yup": "1.3.3"
   }
