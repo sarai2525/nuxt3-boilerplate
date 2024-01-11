@@ -1,5 +1,5 @@
-import { useState, onBeforeMount } from '#imports'
-import { readonly, computed, ComputedRef } from 'vue'
+import { useState, onBeforeMount, clearNuxtState } from '#imports'
+import { readonly, computed, type ComputedRef } from 'vue'
 import { string } from 'yup'
 
 type Form = {
@@ -58,7 +58,7 @@ export const useForm = () => {
     formData.value[key] = value
   }
   function resetForm() {
-    Object.assign(formData.value, initialState)
+    clearNuxtState('form_data')
   }
   function initializeForm() {
     onBeforeMount(() => {
