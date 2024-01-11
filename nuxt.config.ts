@@ -42,7 +42,7 @@ export default defineNuxtConfig({
   },
   image: {
     dir: 'assets/images',
-    quality: 70,
+    quality: 80,
   },
   postcss: {
     plugins: {
