@@ -14,7 +14,6 @@ export default defineNuxtConfig({
       title: '',
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      link: [{ rel: 'manifest', href: '/manifest.webmanifest' }],
     },
     buildAssetsDir: `${isDev ? '_nuxt' : 'assets'}`,
   },
@@ -34,11 +33,20 @@ export default defineNuxtConfig({
   },
   // css: ['@/assets/scss/style.scss'],
   telemetry: false,
-  modules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'],
+  modules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module', '@nuxt/image'],
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
       CONTACT_FORM_URL: process.env.CONTACT_FORM_URL || process.env.CONTACT_FORM_URL_DEV,
+    },
+  },
+  image: {
+    dir: 'assets/images',
+    quality: 80,
+  },
+  postcss: {
+    plugins: {
+      autoprefixer: {},
     },
   },
 })
