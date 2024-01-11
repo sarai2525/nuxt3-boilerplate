@@ -64,6 +64,9 @@ devDependencies:
   stylelint-config-recommended-vue:
     specifier: 1.5.0
     version: 1.5.0(postcss-html@1.5.0)(stylelint@15.11.0)
+  stylelint-order:
+    specifier: 6.0.4
+    version: 6.0.4(stylelint@15.11.0)
   typescript:
     specifier: 5.3.3
     version: 5.3.3
@@ -7805,6 +7808,15 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
+  /postcss-sorting@8.0.2(postcss@8.4.33):
+    resolution:
+      { integrity: sha512-M9dkSrmU00t/jK7rF6BZSZauA5MAaBW4i5EnJXspMwt4iqTh/L9j6fgMnbElEOfyRyfLfVbIHj/R52zHzAPe1Q== }
+    peerDependencies:
+      postcss: ^8.4.20
+    dependencies:
+      postcss: 8.4.33
+    dev: true
+
   /postcss-svgo@6.0.2(postcss@8.4.33):
     resolution:
       { integrity: sha512-IH5R9SjkTkh0kfFOQDImyy1+mTCb+E830+9SV1O+AaDcoHTvfsvt6WwJeo7KwcHbFnevZVCsXhDmjFiGVuwqFQ== }
@@ -8907,6 +8919,17 @@ packages:
     peerDependencies:
       stylelint: ^16.0.0
     dependencies:
+      stylelint: 15.11.0(typescript@5.3.3)
+    dev: true
+
+  /stylelint-order@6.0.4(stylelint@15.11.0):
+    resolution:
+      { integrity: sha512-0UuKo4+s1hgQ/uAxlYU4h0o0HS4NiQDud0NAUNI0aa8FJdmYHA5ZZTFHiV5FpmE3071e9pZx5j0QpVJW5zOCUA== }
+    peerDependencies:
+      stylelint: ^14.0.0 || ^15.0.0 || ^16.0.1
+    dependencies:
+      postcss: 8.4.33
+      postcss-sorting: 8.0.2(postcss@8.4.33)
       stylelint: 15.11.0(typescript@5.3.3)
     dev: true
 
