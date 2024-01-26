@@ -24,8 +24,8 @@ devDependencies:
     specifier: 6.19.1
     version: 6.19.1(eslint@8.56.0)(typescript@5.3.3)
   '@unocss/reset':
-    specifier: 0.58.3
-    version: 0.58.3
+    specifier: 0.58.4
+    version: 0.58.4
   '@vue/eslint-config-prettier':
     specifier: 9.0.0
     version: 9.0.0(eslint@8.56.0)(prettier@3.2.4)
@@ -2481,8 +2481,8 @@ packages:
       vue: 3.4.15(typescript@5.3.3)
     dev: true
 
-  /@unocss/reset@0.58.3:
-    resolution: {integrity: sha512-Q2KiRQlam2iYsTZgKdvnXEfUN4TA2oVpGIVD9Wa0ggs0XlYj5aOo0g0+4Tgqqn+YaviZQeJKnDs/JWE+ygHhZA==}
+  /@unocss/reset@0.58.4:
+    resolution: {integrity: sha512-ZZTrAdl4WWmMjQdOqcOSWdgFH6kdFKZjPu4c6Ijxk7KvY2BW3nttTTBa7IYeuXFHVfcExUFqlOgRurt+NeWYyQ==}
     dev: true
 
   /@vercel/nft@0.24.4:
