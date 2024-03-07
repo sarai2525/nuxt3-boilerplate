@@ -7,9 +7,6 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { useSeoMeta } from '#imports'
-  import { useForm } from '@/composables/form'
-
   useSeoMeta({
     title: '',
     ogTitle: '',
@@ -17,7 +14,7 @@
     ogDescription: '',
     ogImage: '',
   })
-  const { initializeForm } = useForm()
+  const { initializeForm } = useContactForm()
   initializeForm()
 </script>
 <style lang="scss" scoped>

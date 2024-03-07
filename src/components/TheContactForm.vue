@@ -1,29 +1,37 @@
 <template>
-  <Form name="contact" class="contact-form" @submit="navigateToConfirm">
-    <div v-for="(_, keyName) of formData" :key="keyName" class="contact-form-raw">
-      <label :for="keyName" class="label">{{ formSchema[keyName].label }}</label>
-      <Field
-        :id="keyName"
-        v-model="formData[keyName]"
-        :name="keyName"
-        :rules="formSchema[keyName].rules"
-        :placeholder="formSchema[keyName].placeholder"
-        :class="formSchema[keyName].element"
-        :as="formSchema[keyName].element"
-        @input="updateState(keyName, $event.target.value)"
-        @change="updateState(keyName, $event.target.value)"
-      />
-      <ErrorMessage :name="keyName" as="p" class="error-message" />
+  <Form name="contact" @submit="navigateToConfirm">
+    <div class="contact-form">
+      <div v-for="item in formSchema" :key="item.name" class="contact-form-raw">
+        <TheContactFormLabel :name="item.name">{{ item.label }}</TheContactFormLabel>
+        <TheContactFormInput
+          v-if="item.type === 'text'"
+          v-model="formData[item.name]"
+          :item="item"
+          @update-state="updateState"
+        />
+        <TheContactFormRadio
+          v-else-if="item.type === 'radio'"
+          v-model="formData[item.name]"
+          :item="item"
+          @update-state="updateState"
+        />
+        <TheContactFormCheckbox
+          v-else-if="item.type === 'checkbox'"
+          v-model="formData[item.name]"
+          :item="item"
+          @update-checkbox="updateCheckbox"
+        />
+        <TheContactFormTextarea v-else v-model="formData[item.name]" :item="item" @update-state="updateState" />
+      </div>
     </div>
     <button class="button">入力内容の確認</button>
   </Form>
 </template>
 <script setup lang="ts">
-  import { navigateTo } from '#imports'
-  import { Field, Form, ErrorMessage } from 'vee-validate'
-  import { useForm, formSchema } from '@/composables/form'
+  import { Form } from 'vee-validate'
+  import { formSchema } from '@/schema/contactForm'
 
-  const { formData, updateState } = useForm()
+  const { formData, updateState, updateCheckbox } = useContactForm()
 
   function navigateToConfirm() {
     navigateTo('/contact/confirm')
