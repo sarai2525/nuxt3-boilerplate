@@ -13,10 +13,6 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { computed } from 'vue'
-  import { useSeoMeta, useRuntimeConfig } from '#imports'
-  import { useForm, formSchema } from '@/composables/form'
-
   useSeoMeta({
     title: '',
     ogTitle: '',
@@ -26,7 +22,7 @@
     robots: 'noindex',
   })
 
-  const { formData } = useForm()
+  const { formData } = useContactForm()
 
   const config = useRuntimeConfig()
 
