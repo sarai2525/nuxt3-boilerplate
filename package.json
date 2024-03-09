@@ -50,7 +50,8 @@
     "vee-validate": "4.12.5",
     "vue": "3.4.21",
     "vue-router": "4.3.0",
-    "yup": "1.4.0"
+    "yup": "1.4.0",
+    "zhead": "2.2.4"
   },
   "browserslist": [
     "> 2% in JP",
