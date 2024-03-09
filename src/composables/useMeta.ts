@@ -1,30 +1,26 @@
 import { type MetaFlat } from 'zhead'
 
-interface MetaDefaults {
-  title: string
-  description: string
-}
-
 type MetaPickedRequired = Pick<
   MetaFlat,
-  'ogTitle' | 'ogSiteName' | 'ogDescription' | 'ogImage' | 'ogUrl' | 'ogType' | 'ogLocale'
+  'ogTitle' | 'ogSiteName' | 'ogDescription' | 'ogImage' | 'ogUrl' | 'ogType' | 'robots'
 >
 
 type MetaPickedOptional = Pick<
   MetaFlat,
-  'robots' | 'google' | 'googlebot' | 'googlebotNews' | 'googleSiteVerification' | 'twitterCard' | 'fbAppId'
+  'ogLocale' | 'google' | 'googlebot' | 'googlebotNews' | 'googleSiteVerification' | 'twitterCard' | 'fbAppId'
 >
 
-type MetaType = MetaPickedRequired & Partial<MetaPickedOptional> & MetaDefaults
+type MetaType = MetaPickedRequired & Partial<MetaPickedOptional>
 
 export const useMeta = ({
-  title,
-  description,
+  ogTitle,
+  ogDescription,
+  ogSiteName,
   ogImage,
   ogUrl,
   ogType = 'website',
   ogLocale = 'ja_JP',
-  robots = undefined,
+  robots = 'all',
   google = undefined,
   googlebot = undefined,
   googlebotNews = undefined,
@@ -33,11 +29,11 @@ export const useMeta = ({
   fbAppId = undefined,
 }: MetaType) => {
   return useSeoMeta({
-    title,
-    ogTitle: title,
-    ogSiteName: title,
-    description,
-    ogDescription: description,
+    title: ogTitle,
+    ogTitle,
+    ogSiteName,
+    description: ogDescription,
+    ogDescription,
     ogImage,
     ogUrl,
     ogType,
