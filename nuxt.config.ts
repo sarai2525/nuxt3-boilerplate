@@ -21,6 +21,15 @@ export default defineNuxtConfig({
     buildAssetsDir: `${isDev ? '_nuxt' : 'assets'}`,
     // baseURL: isDev ? '' : '/lp', // TODO: デプロイ先がルートディレクトリでない場合、必ず指定しなければならない
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/scss/var/index.scss" as var;',
+        },
+      },
+    },
+  },
   nitro: {
     esbuild: {
       options: {
