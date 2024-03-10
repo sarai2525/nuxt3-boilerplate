@@ -1,11 +1,32 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 const isDev = process.env.NODE_ENV === 'development'
+let moduleList: string[] = [
+  '@nuxtjs/eslint-module',
+  '@nuxtjs/stylelint-module',
+  '@nuxt/image',
+  '@nuxtjs/device',
+  '@vee-validate/nuxt',
+]
+const modules = isDev
+  ? moduleList
+  : (moduleList = [...moduleList, '@nuxtjs/sitemap', 'nuxt-gtag', '@zadigetvoltaire/nuxt-gtm'])
 
-export default defineNuxtConfig({
+const productionConfig = {
+  site: {
+    url: process.env.SITE_URL,
+  },
+  gtag: {
+    id: process.env.GA_ID,
+  },
+  gtm: {
+    id: process.env.GTM_ID,
+  },
+}
+const config = defineNuxtConfig({
   ssr: true,
   srcDir: 'src',
-  devtools: { enabled: true },
+  devtools: { enabled: isDev },
   debug: isDev,
   telemetry: false,
   app: {
@@ -42,10 +63,12 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/scss/style.scss'],
-  modules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module', '@nuxt/image', '@nuxtjs/device', '@vee-validate/nuxt'],
+  modules,
   runtimeConfig: {
     public: {
       CONTACT_FORM_URL: process.env.CONTACT_FORM_URL,
+      SITE_URL: process.env.SITE_URL,
+      APP_ENV: process.env.NODE_ENV,
     },
   },
   image: {
@@ -58,3 +81,7 @@ export default defineNuxtConfig({
     },
   },
 })
+
+const configProduction = { ...config, ...productionConfig }
+
+export default isDev ? config : configProduction

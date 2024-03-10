@@ -7,19 +7,17 @@
   </div>
 </template>
 <script setup lang="ts">
-  useSeoMeta({
-    title: '',
+  import { useMeta } from '@/composables/useMeta'
+  useMeta({
     ogTitle: '',
-    description: '',
+    ogSiteName: '',
     ogDescription: '',
+    ogType: 'article',
+    ogLocale: 'ja_JP',
     ogImage: '',
-    robots: 'noindex',
+    ogUrl: '',
+    robots: 'none',
   })
   const { initializeForm } = useContactForm()
   initializeForm()
 </script>
-<style lang="scss" scoped>
-  .section {
-    text-align: center;
-  }
-</style>
