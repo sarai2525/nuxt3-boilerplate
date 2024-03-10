@@ -42,7 +42,14 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/scss/style.scss'],
-  modules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module', '@nuxt/image', '@nuxtjs/device', '@vee-validate/nuxt'],
+  modules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/stylelint-module',
+    '@nuxt/image',
+    '@nuxtjs/device',
+    '@vee-validate/nuxt',
+    '@nuxtjs/sitemap',
+  ],
   runtimeConfig: {
     public: {
       CONTACT_FORM_URL: process.env.CONTACT_FORM_URL,
