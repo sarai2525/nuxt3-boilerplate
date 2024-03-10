@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Index page</h1>
+    <p v-if="isMobile">わわわ</p>
   </div>
 </template>
 <script lang="ts" setup>
@@ -15,4 +16,7 @@
     ogType: 'website',
     robots: 'all',
   })
+
+  const { isMobile } = useDevice()
+  console.log('🚀 ~ isMobile:', isMobile)
 </script>
