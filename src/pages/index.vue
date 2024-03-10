@@ -20,3 +20,11 @@
   const { isMobile } = useDevice()
   console.log('🚀 ~ isMobile:', isMobile)
 </script>
+<style lang="scss" scoped>
+  @include var.mq-down('sm') {
+    p {
+      font-size: 500px;
+      color: red;
+    }
+  }
+</style>
