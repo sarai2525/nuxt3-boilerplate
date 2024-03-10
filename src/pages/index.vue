@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Index page</h1>
-    <p v-if="isMobile">わわわ</p>
+    <p>{{ data }}</p>
   </div>
 </template>
 <script lang="ts" setup>
@@ -18,13 +18,13 @@
   })
 
   const { isMobile } = useDevice()
-  console.log('🚀 ~ isMobile:', isMobile)
+
+  const data = {
+    title: isMobile ? 'is mobile' : 'is not mobile',
+  }
 </script>
 <style lang="scss" scoped>
-  @include var.mq-down('sm') {
-    p {
-      font-size: 500px;
-      color: red;
-    }
+  p {
+    color: red;
   }
 </style>
