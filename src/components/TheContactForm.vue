@@ -36,11 +36,10 @@
 </script>
 <style lang="scss" scoped>
   .contact-form {
-    @apply max-w-2xl w-full;
-    margin: 0 auto;
+    @apply max-w-2xl w-full mx-auto;
   }
   .row {
-    @apply flex flex-col pt-6 pb-6;
+    @apply flex flex-col pt-4 pb-4;
     &:not(:first-child) {
       @apply border-t border-gray-300;
     }
