@@ -26,7 +26,6 @@
   type PropType = {
     item: FormSchemaType
   }
-
   defineProps<PropType>()
   const modelValue = defineModel<string | readonly string[]>()
 </script>
