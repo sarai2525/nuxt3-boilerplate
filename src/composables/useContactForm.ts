@@ -13,8 +13,9 @@ export const initialState: FormType = {
 export const useContactForm = () => {
   const formData = useState<FormType>('contact_form', () => initialState)
   function updateState(modelValue: FormType) {
-    console.log('🚀 ~ updateState ~ modelValue:', modelValue)
-    formData.value = modelValue
+    Object.keys(modelValue).forEach((key) => {
+      formData.value[key] = modelValue[key]
+    })
   }
   function resetForm() {
     clearNuxtState('contact_form')
