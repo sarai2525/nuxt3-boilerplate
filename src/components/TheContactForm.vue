@@ -39,13 +39,10 @@
     @apply max-w-2xl w-full mx-auto;
   }
   .row {
-    @apply flex flex-col pt-4 pb-4;
+    @apply flex flex-col pt-6 pb-6;
     &:not(:first-child) {
       @apply border-t border-gray-300;
     }
-  }
-  .label {
-    flex: 0 0 33%;
   }
   .input-element {
     @apply mt-2;

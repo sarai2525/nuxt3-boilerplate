@@ -12,5 +12,6 @@
 <style lang="scss" scoped>
   .label {
     @apply text-sm;
+    line-height: 1;
   }
 </style>
