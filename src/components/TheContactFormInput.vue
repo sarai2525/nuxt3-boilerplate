@@ -22,7 +22,6 @@
   }
   defineProps<PropType>()
   const modelValue = defineModel<string | readonly string[]>()
-  const $style = useCssModule()
 </script>
 <style lang="scss" module>
   .input {
