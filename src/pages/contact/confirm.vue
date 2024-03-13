@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>お問い合わせ 入力内容確認</h1>
-    <section class="section">
+    <section :class="$style.section">
+      <h1>お問い合わせ 入力内容確認</h1>
       <TheContactFormConfirm class="contact-form" />
     </section>
   </div>
@@ -19,3 +19,8 @@
     robots: 'none',
   })
 </script>
+<style lang="scss" module>
+  .section {
+    @apply w-9/12 mx-auto;
+  }
+</style>

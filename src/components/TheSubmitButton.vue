@@ -1,10 +1,10 @@
 <template>
-  <div class="the-submit-button">
-    <button class="button"><slot>ぼたん</slot></button>
+  <div :class="$style.buttonArea">
+    <button :class="$style.button"><slot>ぼたん</slot></button>
   </div>
 </template>
-<style lang="scss" scoped>
-  .the-submit-button {
+<style lang="scss" module>
+  .buttonArea {
     justify-content: center;
     align-items: center;
     display: flex;

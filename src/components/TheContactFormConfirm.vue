@@ -24,7 +24,7 @@
   const config = useRuntimeConfig()
   const contactFormUrl = config.public.CONTACT_FORM_URL
 </script>
-<style lang="scss" scoped>
+<style lang="scss" module>
   @import '@/assets/scss/form.scss';
   .contact-form {
     @apply flex flex-col max-w-2xl w-full;

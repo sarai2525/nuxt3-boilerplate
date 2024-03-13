@@ -1,24 +1,29 @@
 <template>
   <Form name="contact" @submit="navigateToConfirm">
-    <div class="contact-form">
-      <div v-for="item in formSchema" :key="item.name" class="row">
-        <TheContactFormLabel :name="item.name" class="label">{{ item.label }}</TheContactFormLabel>
-        <TheContactFormInput v-if="item.type === 'text'" v-model="form[item.name]" :item="item" class="input-element" />
+    <div :class="$style.contactForm">
+      <div v-for="item in formSchema" :key="item.name" :class="$style.row">
+        <TheContactFormLabel :name="item.name">{{ item.label }}</TheContactFormLabel>
+        <TheContactFormInput
+          v-if="item.type === 'text'"
+          v-model="form[item.name]"
+          :item="item"
+          :class="$style.inputElement"
+        />
         <TheContactFormRadio
           v-else-if="item.type === 'radio'"
           v-model="form[item.name]"
           :item="item"
-          class="input-element"
+          :class="$style.inputElement"
         />
         <TheContactFormCheckbox
           v-else-if="item.type === 'checkbox'"
           v-model="form[item.name]"
           :item="item"
-          class="input-element"
+          :class="$style.inputElement"
         />
-        <TheContactFormTextarea v-else v-model="form[item.name]" :item="item" class="input-element" />
+        <TheContactFormTextarea v-else v-model="form[item.name]" :item="item" :class="$style.inputElement" />
       </div>
-      <TheSubmitButton class="button-area">確認</TheSubmitButton>
+      <TheSubmitButton :class="$style.buttonArea">確認</TheSubmitButton>
     </div>
   </Form>
 </template>
@@ -34,8 +39,8 @@
     navigateTo('/contact/confirm')
   }
 </script>
-<style lang="scss" scoped>
-  .contact-form {
+<style lang="scss" module>
+  .contactForm {
     @apply max-w-2xl w-full mx-auto;
   }
   .row {
@@ -44,10 +49,10 @@
       @apply border-t border-gray-300;
     }
   }
-  .input-element {
+  .inputElement {
     @apply mt-2;
   }
-  .button-area {
+  .buttonArea {
     @apply mt-4;
   }
 </style>

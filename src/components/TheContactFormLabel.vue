@@ -1,5 +1,5 @@
 <template>
-  <label :for="props.name" class="label">
+  <label :for="name" :class="$style.label">
     <slot>ラベル</slot>
   </label>
 </template>
@@ -7,9 +7,9 @@
   type PropType = {
     name: string
   }
-  const props = defineProps<PropType>()
+  defineProps<PropType>()
 </script>
-<style lang="scss" scoped>
+<style lang="scss" module>
   .label {
     @apply text-sm;
     line-height: 1;

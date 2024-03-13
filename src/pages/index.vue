@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Index page</h1>
+    <section :class="$style.section">
+      <h1>Index page</h1>
+    </section>
   </div>
 </template>
 <script lang="ts" setup>
@@ -16,3 +18,8 @@
     robots: 'all',
   })
 </script>
+<style lang="scss" module>
+  .section {
+    @apply w-9/12 mx-auto;
+  }
+</style>

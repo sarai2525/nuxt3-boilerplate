@@ -1,5 +1,10 @@
 <template>
-  <header class="header">
-    <div class="header-inner">Header</div>
+  <header :class="$style.header">
+    <div :class="$style.headerInner">Header</div>
   </header>
 </template>
+<style lang="scss" module>
+  .headerInner {
+    @apply w-9/12 mx-auto;
+  }
+</style>
