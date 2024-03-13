@@ -9,7 +9,7 @@
         <TheContactFormTextarea v-else v-model="form[item.name]" :item="item" />
       </div>
     </div>
-    <button class="button">送信</button>
+    <button class="button">入力内容確認</button>
   </Form>
 </template>
 <script setup lang="ts">
