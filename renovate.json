@@ -11,9 +11,6 @@
   ],
   "schedule": ["every 1 hour after 00:00 and before 23:59 every day"],
   "automergeSchedule": ["every 1 hour after 00:00 and before 23:59 every day"],
-  "major": {
-    "enabled": false
-  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
@@ -24,6 +21,17 @@
       "matchPackagePatterns": ["eslint"],
       "groupName": "eslint",
       "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackagePatterns": ["nuxt"],
+      "groupName": "nuxt",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "groupName": "major",
+      "automerge": false
     }
   ],
   "labels": ["renovate"],
