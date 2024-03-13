@@ -1,8 +1,8 @@
-type FormType = {
+export type FormType = {
   [key: string]: string | string[]
 }
 
-const initialState: FormType = {
+export const initialState: FormType = {
   name: '',
   email: '',
   subject: '',
@@ -12,16 +12,9 @@ const initialState: FormType = {
 
 export const useContactForm = () => {
   const formData = useState<FormType>('contact_form', () => initialState)
-  function updateState(key: string | number, value: string) {
-    formData.value[key] = value
-  }
-  function updateCheckbox(key: string, value: string, checked: boolean) {
-    const checkbox = formData.value[key] as string[]
-    if (checked === true) {
-      formData.value[key] = [...checkbox, value]
-      return
-    }
-    formData.value[key] = checkbox.filter((v: string) => v !== value)
+  function updateState(modelValue: FormType) {
+    console.log('🚀 ~ updateState ~ modelValue:', modelValue)
+    formData.value = modelValue
   }
   function resetForm() {
     clearNuxtState('contact_form')
@@ -34,7 +27,6 @@ export const useContactForm = () => {
   return {
     formData: readonly(formData),
     updateState,
-    updateCheckbox,
     resetForm,
     initializeForm,
   }
