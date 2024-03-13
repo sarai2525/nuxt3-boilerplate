@@ -7,6 +7,7 @@ let moduleList: string[] = [
   '@nuxt/image',
   '@nuxtjs/device',
   '@vee-validate/nuxt',
+  '@nuxt/test-utils/module',
 ]
 const modules = isDev
   ? moduleList
