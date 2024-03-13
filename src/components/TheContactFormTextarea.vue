@@ -24,3 +24,11 @@
   const props = defineProps<PropType>()
   const item = computed(() => props.item)
 </script>
+<style lang="scss" scoped>
+  .textarea {
+    @apply w-full min-h-40 p-2 text-sm border border-slate-300 border-solid rounded-md;
+  }
+  .error-message {
+    @include var.error-message;
+  }
+</style>

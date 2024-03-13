@@ -28,3 +28,14 @@
   const props = defineProps<PropType>()
   const item = computed(() => props.item)
 </script>
+<style lang="scss" scoped>
+  .label {
+    @apply text-sm;
+    &:not(:first-child) {
+      @apply ml-4;
+    }
+  }
+  .error-message {
+    @include var.error-message;
+  }
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="input">
+  <div class="w-full">
     <Field
       :id="item.name"
       v-model="modelValue"
@@ -24,3 +24,11 @@
   const props = defineProps<PropType>()
   const item = computed(() => props.item)
 </script>
+<style lang="scss" scoped>
+  .input {
+    @apply w-full p-2 text-sm border border-slate-300 border-solid rounded-md;
+  }
+  .error-message {
+    @include var.error-message;
+  }
+</style>

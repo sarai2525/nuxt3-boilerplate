@@ -1,7 +1,7 @@
 <template>
   <Form name="contact" method="post" :action="contactFormUrl">
     <div class="contact-form">
-      <div v-for="(item, index) in formSchema" :key="index" class="contact-form-row">
+      <div v-for="(item, index) in formSchema" :key="index" class="row">
         <TheContactFormLabel :name="item.name">{{ item.label }}</TheContactFormLabel>
         <textarea
           v-if="item.element === 'textarea'"
@@ -25,10 +25,9 @@
   const contactFormUrl = config.public.CONTACT_FORM_URL
 </script>
 <style lang="scss" scoped>
-  .input,
-  .textarea {
-    &:hover {
-      cursor: not-allowed;
-    }
+  @import '@/assets/scss/form.scss';
+  .contact-form {
+    @apply flex flex-col max-w-2xl w-full;
+    margin: 0 auto;
   }
 </style>

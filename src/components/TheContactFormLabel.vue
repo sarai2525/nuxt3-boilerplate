@@ -9,3 +9,8 @@
   }
   const props = defineProps<PropType>()
 </script>
+<style lang="scss" scoped>
+  .label {
+    @apply text-sm;
+  }
+</style>
