@@ -3,6 +3,7 @@
     <label v-for="(options, index) in item.options" :key="index" :for="options.label" class="label">
       <Field
         :id="options.label"
+        v-model="modelValue"
         :value="options.value"
         :name="item.name"
         :rules="item.rules"
@@ -10,7 +11,6 @@
         :class="item.element"
         :as="item.element"
         :type="item.type"
-        @change="updateState(item.name, $event.target.value, $event.target.checked)"
       />
       {{ options.label }}
     </label>
@@ -22,16 +22,9 @@
   import { type FormSchemaType } from '@/schema/contactForm'
 
   type PropType = {
-    modelValue: string | readonly string[]
     item: FormSchemaType
   }
+  const modelValue = defineModel<string | readonly string[]>()
   const props = defineProps<PropType>()
   const item = computed(() => props.item)
-  const emit = defineEmits<{
-    updateCheckbox: [name: string, value: string, checked: boolean]
-  }>()
-
-  function updateState(name: string, value: string, checked: boolean) {
-    emit('updateCheckbox', name, value, checked)
-  }
 </script>

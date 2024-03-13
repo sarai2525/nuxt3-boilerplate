@@ -2,15 +2,13 @@
   <div class="input">
     <Field
       :id="item.name"
-      :value="props.modelValue"
+      v-model="modelValue"
       :name="item.name"
       :rules="item.rules"
       :placeholder="item.placeholder"
       :class="item.element"
       :as="item.element"
       :type="item.type"
-      @input="updateState(item.name, $event.target.value)"
-      @change="updateState(item.name, $event.target.value)"
     />
     <ErrorMessage :name="item.name" as="p" class="error-message" />
   </div>
@@ -20,16 +18,9 @@
   import { type FormSchemaType } from '@/schema/contactForm'
 
   type PropType = {
-    modelValue: string | readonly string[]
     item: FormSchemaType
   }
+  const modelValue = defineModel<string | readonly string[]>()
   const props = defineProps<PropType>()
   const item = computed(() => props.item)
-  const emit = defineEmits<{
-    updateState: [name: string, value: string]
-  }>()
-
-  function updateState(name: string, value: string) {
-    emit('updateState', name, value)
-  }
 </script>

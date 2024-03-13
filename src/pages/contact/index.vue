@@ -9,7 +9,7 @@
 <script setup lang="ts">
   import { useMeta } from '@/composables/useMeta'
   useMeta({
-    ogTitle: '',
+    ogTitle: 'お問い合わせ',
     ogSiteName: '',
     ogDescription: '',
     ogType: 'article',

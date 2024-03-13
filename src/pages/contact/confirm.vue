@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h1>お問い合わせ</h1>
+    <h1>お問い合わせ 入力内容確認</h1>
     <section class="section">
-      <p>お問い合わせいただきありがとうございました</p>
+      <TheContactFormConfirm class="contact-form" />
     </section>
   </div>
 </template>
 <script setup lang="ts">
   import { useMeta } from '@/composables/useMeta'
   useMeta({
-    ogTitle: 'お問い合わせ 完了',
+    ogTitle: 'お問い合わせ 入力内容確認',
     ogSiteName: '',
     ogDescription: '',
     ogType: 'article',
@@ -18,6 +18,4 @@
     ogUrl: '',
     robots: 'none',
   })
-  const { initializeForm } = useContactForm()
-  initializeForm()
 </script>
