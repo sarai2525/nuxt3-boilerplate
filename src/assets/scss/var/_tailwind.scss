@@ -1,3 +1,24 @@
 @mixin error-message {
-  @apply text-xs text-red-600 mt-1;
+  .errorMessage {
+    @apply text-xs text-red-600 mt-1;
+  }
+}
+@mixin radio-checkbox {
+  .inputArea {
+    @apply flex;
+  }
+  .label {
+    @apply flex text-sm;
+    &:not(:first-child) {
+      @apply ml-4;
+    }
+  }
+  .input {
+    @apply mr-2;
+  }
+}
+@mixin text-textarea {
+  .input {
+    @apply w-full p-2 text-sm border border-slate-300 border-solid rounded-md;
+  }
 }

@@ -24,10 +24,9 @@
   const modelValue = defineModel<string | readonly string[]>()
 </script>
 <style lang="scss" module>
+  @include var.text-textarea;
+  @include var.error-message;
   .input {
-    @apply w-full min-h-40 p-2 text-sm border border-slate-300 border-solid rounded-md;
-  }
-  .errorMessage {
-    @include var.error-message;
+    @apply min-h-40;
   }
 </style>

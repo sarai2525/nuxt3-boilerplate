@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :class="$style.checkbox">
+    <div :class="$style.inputArea">
       <label v-for="(options, index) in item.options" :key="index" :for="options.label" :class="$style.label">
         <Field
           :id="options.label"
@@ -30,19 +30,6 @@
   const modelValue = defineModel<string | readonly string[]>()
 </script>
 <style lang="scss" module>
-  .checkbox {
-    @apply flex;
-  }
-  .label {
-    @apply flex text-sm;
-    &:not(:first-child) {
-      @apply ml-4;
-    }
-  }
-  .input {
-    @apply mr-2;
-  }
-  .errorMessage {
-    @include var.error-message;
-  }
+  @include var.radio-checkbox;
+  @include var.error-message;
 </style>
