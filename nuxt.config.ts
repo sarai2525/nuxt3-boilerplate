@@ -8,6 +8,7 @@ let moduleList: string[] = [
   '@nuxtjs/device',
   '@vee-validate/nuxt',
   '@nuxt/test-utils/module',
+  '@nuxtjs/tailwindcss',
 ]
 const modules = isDev
   ? moduleList
