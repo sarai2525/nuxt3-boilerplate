@@ -1,15 +1,9 @@
 {
   "recommendations": [
-    "wmaurer.change-case",
-    "heybourn.headwind",
-    "vincaslt.highlight-matching-tag",
-    "oderwat.indent-rainbow",
-    "dotup.dotup-vscode-interface-generator",
-    "MariusAlchimavicius.json-to-ts",
-    "willjleong.nuxt-typescript-snippets",
-    "bradlc.vscode-tailwindcss",
-    "ChakrounAnas.turbo-console-log",
-    "deinsoftware.vitest-snippets",
-    "rangav.vscode-thunder-client"
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "vue.volar",
+    "vitest.explorer"
   ]
 }

@@ -1,16 +1,20 @@
 {
+  "eslint.workingDirectories": ["./"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "stylelint.validate": ["css", "scss", "vue"],
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit"
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
   },
-  "css.validate": false,
-  "scss.validate": false,
-  "emmet.includeLanguages": {
-    "vue": "html"
+  "[json]": {
+    "editor.formatOnSave": true
   },
-  "nuxt.isNuxtApp": false
+  "vitest.commandLine": "npx vitest",
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
