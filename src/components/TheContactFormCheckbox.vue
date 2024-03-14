@@ -29,7 +29,4 @@
   defineProps<PropType>()
   const modelValue = defineModel<string | readonly string[]>()
 </script>
-<style lang="scss" module>
-  @include var.radio-checkbox;
-  @include var.error-message;
-</style>
+<style lang="scss" module></style>

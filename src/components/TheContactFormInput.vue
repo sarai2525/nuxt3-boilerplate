@@ -23,7 +23,4 @@
   defineProps<PropType>()
   const modelValue = defineModel<string | readonly string[]>()
 </script>
-<style lang="scss" module>
-  @include var.text-textarea;
-  @include var.error-message;
-</style>
+<style lang="scss" module></style>

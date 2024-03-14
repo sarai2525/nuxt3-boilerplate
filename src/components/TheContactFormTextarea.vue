@@ -23,10 +23,4 @@
   defineProps<PropType>()
   const modelValue = defineModel<string | readonly string[]>()
 </script>
-<style lang="scss" module>
-  @include var.text-textarea;
-  @include var.error-message;
-  .input {
-    @apply min-h-40;
-  }
-</style>
+<style lang="scss" module></style>

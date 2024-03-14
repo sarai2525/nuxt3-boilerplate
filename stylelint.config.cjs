@@ -21,6 +21,7 @@ module.exports = {
     'at-rule-disallowed-list': ['extend'],
     'at-rule-empty-line-before': 'never',
     'no-descending-specificity': null,
+    'no-empty-source': null,
     'order/properties-order': [
       'content',
       'position',

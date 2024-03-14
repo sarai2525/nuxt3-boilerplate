@@ -1,10 +1,19 @@
 <template>
-  <footer :class="$style.footer">
-    <div :class="$style.footerInner">Footer</div>
+  <footer class="footer">
+    <div class="footer-inner">
+      Footer
+      <small v-if="appEnv === 'dev'">{{ appEnv }}</small>
+    </div>
   </footer>
 </template>
-<style lang="scss" module>
-  .footerInner {
-    @apply w-9/12 mx-auto;
+<script lang="ts" setup>
+  const config = useRuntimeConfig()
+  const appEnv = config.public.APP_ENV
+</script>
+<style lang="scss" scoped>
+  small {
+    display: block;
+    font-size: 16px;
+    color: crimson;
   }
 </style>

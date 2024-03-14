@@ -9,9 +9,4 @@
   }
   defineProps<PropType>()
 </script>
-<style lang="scss" module>
-  .label {
-    @apply text-sm;
-    line-height: 1;
-  }
-</style>
+<style lang="scss" module></style>

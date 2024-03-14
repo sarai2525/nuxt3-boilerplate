@@ -39,20 +39,4 @@
     navigateTo('/contact/confirm')
   }
 </script>
-<style lang="scss" module>
-  .contactForm {
-    @apply max-w-2xl w-full mx-auto;
-  }
-  .row {
-    @apply flex flex-col pt-6 pb-6;
-    &:not(:first-child) {
-      @apply border-t border-gray-300;
-    }
-  }
-  .inputElement {
-    @apply mt-2;
-  }
-  .buttonArea {
-    @apply mt-4;
-  }
-</style>
+<style lang="scss" module></style>
