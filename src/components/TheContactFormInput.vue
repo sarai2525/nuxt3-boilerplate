@@ -6,11 +6,10 @@
       :name="item.name"
       :rules="item.rules"
       :placeholder="item.placeholder"
-      :class="$style.input"
       :as="item.element"
       :type="item.type"
     />
-    <ErrorMessage :name="item.name" as="p" :class="$style.errorMessage" />
+    <ErrorMessage :name="item.name" as="p" />
   </div>
 </template>
 <script setup lang="ts">

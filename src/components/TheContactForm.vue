@@ -1,30 +1,13 @@
 <template>
   <Form name="contact" @submit="navigateToConfirm">
-    <div :class="$style.contactForm">
-      <div v-for="item in formSchema" :key="item.name" :class="$style.row">
-        <TheContactFormLabel :name="item.name">{{ item.label }}</TheContactFormLabel>
-        <TheContactFormInput
-          v-if="item.type === 'text'"
-          v-model="form[item.name]"
-          :item="item"
-          :class="$style.inputElement"
-        />
-        <TheContactFormRadio
-          v-else-if="item.type === 'radio'"
-          v-model="form[item.name]"
-          :item="item"
-          :class="$style.inputElement"
-        />
-        <TheContactFormCheckbox
-          v-else-if="item.type === 'checkbox'"
-          v-model="form[item.name]"
-          :item="item"
-          :class="$style.inputElement"
-        />
-        <TheContactFormTextarea v-else v-model="form[item.name]" :item="item" :class="$style.inputElement" />
-      </div>
-      <TheSubmitButton :class="$style.buttonArea">確認</TheSubmitButton>
+    <div v-for="item in formSchema" :key="item.name">
+      <TheContactFormLabel :name="item.name">{{ item.label }}</TheContactFormLabel>
+      <TheContactFormInput v-if="item.type === 'text'" v-model="form[item.name]" :item="item" />
+      <TheContactFormRadio v-else-if="item.type === 'radio'" v-model="form[item.name]" :item="item" />
+      <TheContactFormCheckbox v-else-if="item.type === 'checkbox'" v-model="form[item.name]" :item="item" />
+      <TheContactFormTextarea v-else v-model="form[item.name]" :item="item" />
     </div>
+    <TheSubmitButton>確認</TheSubmitButton>
   </Form>
 </template>
 <script setup lang="ts">

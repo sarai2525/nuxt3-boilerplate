@@ -1,19 +1,11 @@
 <template>
   <Form name="contact" method="post" :action="contactFormUrl">
-    <div class="contact-form">
-      <div v-for="(item, index) in formSchema" :key="index" class="row">
-        <TheContactFormLabel :name="item.name">{{ item.label }}</TheContactFormLabel>
-        <textarea
-          v-if="item.element === 'textarea'"
-          :name="item.label"
-          :value="formData[item.name]"
-          class="textarea"
-          readonly
-        />
-        <input v-else :name="item.label" :value="formData[item.name]" class="input" readonly />
-      </div>
+    <div v-for="(item, index) in formSchema" :key="index">
+      <TheContactFormLabel :name="item.name">{{ item.label }}</TheContactFormLabel>
+      <textarea v-if="item.element === 'textarea'" :name="item.label" :value="formData[item.name]" readonly />
+      <input v-else :name="item.label" :value="formData[item.name]" class="input" readonly />
     </div>
-    <button class="button">送信</button>
+    <TheSubmitButton>送信</TheSubmitButton>
   </Form>
 </template>
 <script setup lang="ts">

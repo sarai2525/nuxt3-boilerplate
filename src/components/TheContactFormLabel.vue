@@ -1,5 +1,5 @@
 <template>
-  <label :for="name" :class="$style.label">
+  <label :for="name">
     <slot>ラベル</slot>
   </label>
 </template>
