@@ -1,4 +1,5 @@
 {
+  "eslint.workingDirectories": ["./"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
@@ -6,12 +7,14 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "emmet.includeLanguages": {
-    "vue": "html"
-  },
   "[vue]": {
     "editor.defaultFormatter": "Vue.volar"
   },
-  "vitest.commandLine": "npx vitest"
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "vitest.commandLine": "npx vitest",
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
