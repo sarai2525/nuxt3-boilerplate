@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.APP_ENV === 'dev'
 let moduleList: string[] = [
   '@nuxtjs/eslint-module',
   '@nuxtjs/stylelint-module',
@@ -40,7 +40,7 @@ const config = defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
     },
-    buildAssetsDir: `${isDev ? '_nuxt' : 'assets'}`,
+    buildAssetsDir: isDev ? '_nuxt' : 'assets',
     // baseURL: isDev ? '' : '/lp', // TODO: デプロイ先がルートディレクトリでない場合、必ず指定しなければならない
   },
   vite: {
@@ -69,7 +69,7 @@ const config = defineNuxtConfig({
     public: {
       CONTACT_FORM_URL: process.env.CONTACT_FORM_URL,
       SITE_URL: process.env.SITE_URL,
-      APP_ENV: process.env.NODE_ENV,
+      APP_ENV: process.env.APP_ENV,
     },
   },
   image: {
