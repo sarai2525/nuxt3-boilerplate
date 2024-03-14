@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>お問い合わせ</h1>
-    <section class="section">
+    <section :class="$style.section">
+      <h1>お問い合わせ</h1>
       <p>お問い合わせいただきありがとうございました</p>
     </section>
   </div>
@@ -21,3 +21,8 @@
   const { initializeForm } = useContactForm()
   initializeForm()
 </script>
+<style lang="scss" module>
+  .section {
+    @apply w-9/12 mx-auto;
+  }
+</style>

@@ -8,7 +8,7 @@ type OptionsType = {
 export type FormSchemaType = {
   name: string
   label: string
-  element: string
+  element: 'input' | 'textarea' | 'select'
   type?: 'text' | 'radio' | 'checkbox'
   placeholder?: string
   rules?: any
@@ -66,8 +66,8 @@ export const formSchema: ComputedRef<FormSchemaType[]> = computed(() => {
     },
     {
       name: 'message',
-      label: 'お問い合わせ内容詳細',
-      placeholder: 'お問い合わせ内容詳細を入力してください',
+      label: 'お問い合わせ詳細',
+      placeholder: 'お問い合わせ詳細を入力してください',
       element: 'textarea',
       rules: required,
     },
