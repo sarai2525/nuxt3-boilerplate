@@ -7,9 +7,6 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
-  },
   "[json]": {
     "editor.formatOnSave": true
   },
