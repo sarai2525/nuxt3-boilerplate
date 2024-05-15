@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxt/eslint-config": "0.3.12",
+    "@nuxt/eslint": "0.3.12",
     "@nuxt/image": "1.7.0",
     "@nuxt/test-utils": "3.12.1",
     "@nuxtjs/device": "3.1.1",
@@ -64,5 +64,6 @@
     "> 2% in JP",
     "ios >= 15",
     "not dead"
-  ]
+  ],
+  "packageManager": "pnpm@8.8.0+sha1.9922e8b650d393700209ccd81e0ebdbcbe43b0d3"
 }
