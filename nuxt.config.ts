@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 const isDev = process.env.APP_ENV === 'dev'
 let moduleList: string[] = [
-  '@nuxtjs/eslint-module',
+  '@nuxt/eslint',
   '@nuxtjs/stylelint-module',
   '@nuxt/image',
   '@nuxtjs/device',

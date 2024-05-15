@@ -11,7 +11,7 @@ export type FormSchemaType = {
   element: 'input' | 'textarea' | 'select'
   type?: 'text' | 'radio' | 'checkbox'
   placeholder?: string
-  rules?: any
+  rules?: unknown
   options?: OptionsType[]
 }
 
