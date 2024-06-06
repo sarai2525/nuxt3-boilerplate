@@ -36,8 +36,8 @@ importers:
         specifier: 0.60.4
         version: 0.60.4
       '@vee-validate/nuxt':
-        specifier: 4.12.8
-        version: 4.12.8(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5))
+        specifier: 4.13.1
+        version: 4.13.1(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5))
       '@vee-validate/yup':
         specifier: 4.13.1
         version: 4.13.1(vue@3.4.27(typescript@5.4.5))
@@ -1463,8 +1463,8 @@ packages:
     peerDependencies:
       webpack: ^4 || ^5
 
-  '@vee-validate/nuxt@4.12.8':
-    resolution: {integrity: sha512-etB3bwfvA+gspw7ruN90m1IKG7ptyhLw+HqGzdttUakKG1yNpKzpwRDXIhHzHdf78MtbKk05qqtl5xMoPUGTHQ==}
+  '@vee-validate/nuxt@4.13.1':
+    resolution: {integrity: sha512-dvpXF5t9AvablUJjiZ/88bvgbW41h1ZNtBtIRL79/wEmQCGz1lrViBkSADebz3I7QBXvbWKo1NGEZEKGnP/+Kw==}
 
   '@vee-validate/yup@4.13.1':
     resolution: {integrity: sha512-XS057kHcf4uFew708haHVxCjqJ9OYXV57KmOj/R9fnuh76i54F79DCRzm4FDAevOJzkuo7rNBYOSTplY4iXPrQ==}
@@ -5284,11 +5284,6 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vee-validate@4.12.8:
-    resolution: {integrity: sha512-A07rm3+y7SRk0CMD/O4nBT0nxtwjyfzGZwjEUDk18SxK0ZMzd4AFCzzdHlIiCE1QgHetxd0I3kVkZdN0GG0Oww==}
-    peerDependencies:
-      vue: ^3.4.26
-
   vee-validate@4.13.1:
     resolution: {integrity: sha512-JAlUWTBHg0z66n+v66mrtE9IC1xmVCggzpyc7UXCNkizVok8Zgt1VAVjobSxA/0N19Zn6v6hRfjoYciYH/Z11Q==}
     peerDependencies:
@@ -7497,11 +7492,11 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  '@vee-validate/nuxt@4.12.8(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5))':
+  '@vee-validate/nuxt@4.13.1(rollup@4.18.0)(vue@3.4.27(typescript@5.4.5))':
     dependencies:
       '@nuxt/kit': 3.11.2(rollup@4.18.0)
       local-pkg: 0.5.0
-      vee-validate: 4.12.8(vue@3.4.27(typescript@5.4.5))
+      vee-validate: 4.13.1(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -12019,12 +12014,6 @@ snapshots:
   validate-npm-package-name@5.0.1: {}
 
   vary@1.1.2: {}
-
-  vee-validate@4.12.8(vue@3.4.27(typescript@5.4.5)):
-    dependencies:
-      '@vue/devtools-api': 6.6.1
-      type-fest: 4.18.3
-      vue: 3.4.27(typescript@5.4.5)
 
   vee-validate@4.13.1(vue@3.4.27(typescript@5.4.5)):
     dependencies:
