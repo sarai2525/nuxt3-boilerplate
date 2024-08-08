@@ -55,8 +55,8 @@
     "typescript": "5.5.4",
     "vee-validate": "4.13.2",
     "vitest": "1.6.0",
-    "vue": "3.4.35",
-    "vue-router": "4.4.2",
+    "vue": "3.4.36",
+    "vue-router": "4.4.3",
     "yup": "1.4.0",
     "zhead": "2.2.4"
   },
@@ -65,5 +65,5 @@
     "ios >= 15",
     "not dead"
   ],
-  "packageManager": "pnpm@9.6.0"
+  "packageManager": "pnpm@9.7.0"
 }
