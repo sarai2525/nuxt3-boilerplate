@@ -18,7 +18,7 @@
 </template>
 <script setup lang="ts">
   import { Field, ErrorMessage } from 'vee-validate'
-  import { type FormSchemaType } from '@/schema/contactForm'
+  import type { FormSchemaType } from '@/schema/contactForm'
 
   type PropType = {
     item: FormSchemaType
