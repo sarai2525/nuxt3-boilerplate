@@ -78,8 +78,8 @@ importers:
         specifier: 3.12.4
         version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@22.1.0)(encoding@0.1.13)(eslint@9.8.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(stylelint@16.9.0(typescript@5.5.4))(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@22.1.0)(sass@1.77.8)(terser@5.31.5))
       nuxt-gtag:
-        specifier: 2.1.0
-        version: 2.1.0(magicast@0.3.4)(rollup@4.20.0)
+        specifier: 3.0.1
+        version: 3.0.1(magicast@0.3.4)(rollup@4.20.0)
       postcss-scss:
         specifier: 4.0.9
         version: 4.0.9(postcss@8.4.41)
@@ -3699,8 +3699,8 @@ packages:
     engines: {node: ^16.10.0 || >=18.0.0}
     hasBin: true
 
-  nuxt-gtag@2.1.0:
-    resolution: {integrity: sha512-06ES+hgMs5l98bHmsLyltbJXfVr1LAkm/5gwcncdNkz96+D0fVA+RhecIp06iDQXF+YPBE2xAgB4G5PnUn8drA==}
+  nuxt-gtag@3.0.1:
+    resolution: {integrity: sha512-dfDeL8JwvwdCddlSBXqofEVdoONVZ5yqztqoiUs+4fEL+QfAAHtK+3MaLyEVO4keZuiyVQs6XPUJyR7afTVXNg==}
 
   nuxt-site-config-kit@2.2.15:
     resolution: {integrity: sha512-uN+JOijDt0u35rBhI3GhRHvPKncm2Nu/P3QMRIi+mwt4F/tQtlvLa1XUANkeEy8InTnPTVgs6dSDSqHP4sBXzg==}
@@ -9524,9 +9524,9 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  nuxt-gtag@2.1.0(magicast@0.3.4)(rollup@4.20.0):
+  nuxt-gtag@3.0.1(magicast@0.3.4)(rollup@4.20.0):
     dependencies:
-      '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
+      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.20.0)
       defu: 6.1.4
       pathe: 1.1.2
       ufo: 1.5.4
