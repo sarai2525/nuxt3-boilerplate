@@ -33,7 +33,7 @@
     "@vee-validate/nuxt": "4.13.2",
     "@vee-validate/yup": "4.13.2",
     "@vitest/coverage-v8": "2.1.2",
-    "@vue/eslint-config-prettier": "9.0.0",
+    "@vue/eslint-config-prettier": "10.0.0",
     "@vue/test-utils": "2.4.6",
     "@zadigetvoltaire/nuxt-gtm": "0.0.13",
     "dayjs": "1.11.13",
