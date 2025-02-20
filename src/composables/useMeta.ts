@@ -1,4 +1,4 @@
-import { type MetaFlat } from 'zhead'
+import type { MetaFlat } from 'zhead'
 
 type MetaPickedRequired = Pick<
   MetaFlat,
