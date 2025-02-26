@@ -1,7 +1,7 @@
-import { defineVitestConfig } from '@nuxt/test-utils/config'
+import { defineConfig } from 'vitest/config'
 import { fileURLToPath } from 'node:url'
 
-export default defineVitestConfig({
+export default defineConfig({
   test: {
     // サーバーサイドテスト向けの環境設定
     environment: 'node',
@@ -27,7 +27,7 @@ export default defineVitestConfig({
     exclude: ['**/node_modules/**', '**/.nuxt/**', '**/dist/**'],
 
     // テスト実行時に含めるファイル - サーバーディレクトリに焦点
-    include: ['server/**/*.{test,spec}.{js,ts}'],
+    include: ['./src/**/*.{test,spec}.ts'],
 
     environmentOptions: {
       nuxt: {
@@ -35,5 +35,7 @@ export default defineVitestConfig({
         mock: {},
       },
     },
+
+    setupFiles: ['reflect-metadata'],
   },
 })
