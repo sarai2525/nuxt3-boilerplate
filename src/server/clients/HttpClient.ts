@@ -1,16 +1,38 @@
-import type { FetchOptions, FetchResponse } from 'ofetch'
+import type { HttpClientOptions, HttpClientResponse } from '@/types/HttpClient'
 
-export type HttpMethod = 'POST' | 'GET' | 'PUT'
-
-export interface HttpRequestOptions extends Pick<FetchOptions, 'method' | 'body' | 'params' | 'query'> {
-  method?: HttpMethod
-  params?: Record<string, string>
-  body?: Record<string, unknown>
-  query?: Record<string, string>
-}
-
+/**
+ * HTTPクライアントインターフェース
+ */
 export interface HttpClient {
-  post<T>(path: string, options?: HttpRequestOptions): Promise<FetchResponse<T>>
-  get<T>(path: string, options?: HttpRequestOptions): Promise<FetchResponse<T>>
-  put<T>(path: string, options?: HttpRequestOptions): Promise<FetchResponse<T>>
+  /**
+   * GETリクエストを実行します
+   * @param url リクエスト先URL
+   * @param options リクエストオプション（主にqueryを使用）
+   */
+  get<T>(url: string, options?: HttpClientOptions): Promise<HttpClientResponse<T>>
+
+  /**
+   * POSTリクエストを実行します
+   * @param url リクエスト先URL
+   * @param data リクエストボディ
+   * @param options その他のリクエストオプション
+   */
+  post<T>(url: string, data?: unknown, options?: HttpClientOptions): Promise<HttpClientResponse<T>>
+
+  /**
+   * PUTリクエストを実行します
+   * @param url リクエスト先URL
+   * @param data リクエストボディ
+   * @param options その他のリクエストオプション
+   */
+  put<T>(url: string, data?: unknown, options?: HttpClientOptions): Promise<HttpClientResponse<T>>
+
+  /**
+   * DELETEリクエストを実行します
+   * @param url リクエスト先URL
+   * @param options リクエストオプション
+   */
+  delete<T>(url: string, options?: HttpClientOptions): Promise<HttpClientResponse<T>>
 }
+
+export const HTTP_CLIENT_TOKEN = Symbol.for('HttpClient')
