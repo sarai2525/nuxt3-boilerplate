@@ -176,19 +176,46 @@ describe('HttpClientImpl', () => {
   describe('エラーハンドリング', () => {
     it('APIエラー時に適切なエラーメッセージをスローすること', async () => {
       // エラーをモック
-      const errorMessage = 'Network Error'
-      mockFetch.mockRejectedValueOnce(new Error(errorMessage))
+      const originalError = new Error('Network Error')
+      mockFetch.mockRejectedValueOnce(originalError)
 
       // テスト対象のメソッドを実行し、エラーをキャッチ
-      await expect(httpClient.get('/api/test')).rejects.toThrow(`Failed to fetch API: /api/test - ${errorMessage}`)
+      try {
+        await httpClient.get('/api/test')
+        // エラーが発生しなかった場合はテスト失敗
+        expect.fail('エラーが発生しませんでした')
+      } catch (error: unknown) {
+        // エラーを適切な型にキャスト
+        const err = error as Error & { cause: unknown }
+
+        // エラーメッセージを検証
+        expect(err).toBeInstanceOf(Error)
+        expect(err.message).toBe('Failed to fetch API: /api/test')
+        // causeプロパティを検証
+        expect(err.cause).toBe(originalError)
+      }
     })
 
-    it('不明なエラー時にデフォルトのエラーメッセージをスローすること', async () => {
+    it('不明なエラー時にもcauseプロパティが設定されること', async () => {
       // 文字列エラーをモック
-      mockFetch.mockRejectedValueOnce('Unknown error')
+      const originalError = 'Unknown error'
+      mockFetch.mockRejectedValueOnce(originalError)
 
       // テスト対象のメソッドを実行し、エラーをキャッチ
-      await expect(httpClient.get('/api/test')).rejects.toThrow('Failed to fetch API: /api/test')
+      try {
+        await httpClient.get('/api/test')
+        // エラーが発生しなかった場合はテスト失敗
+        expect.fail('エラーが発生しませんでした')
+      } catch (error: unknown) {
+        // エラーを適切な型にキャスト
+        const err = error as Error & { cause: unknown }
+
+        // エラーメッセージを検証
+        expect(err).toBeInstanceOf(Error)
+        expect(err.message).toBe('Failed to fetch API: /api/test')
+        // causeプロパティを検証
+        expect(err.cause).toBe(originalError)
+      }
     })
   })
 })

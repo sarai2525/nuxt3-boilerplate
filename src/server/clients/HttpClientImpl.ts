@@ -77,10 +77,7 @@ export class HttpClientImpl implements HttpClient {
         headers: {},
       }
     } catch (error) {
-      if (error instanceof Error) {
-        throw new Error(`Failed to fetch API: ${url} - ${error.message}`)
-      }
-      throw new Error(`Failed to fetch API: ${url}`)
+      throw new Error(`Failed to fetch API: ${url}`, { cause: error })
     }
   }
 }
