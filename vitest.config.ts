@@ -1,7 +1,16 @@
 import { defineConfig } from 'vitest/config'
 import { fileURLToPath } from 'node:url'
+import { resolve } from 'node:path'
+
+const r = (p: string) => resolve(__dirname, p)
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '~': r('./src'),
+      '@': r('./src'),
+    },
+  },
   test: {
     // サーバーサイドテスト向けの環境設定
     environment: 'node',
