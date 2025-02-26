@@ -3,6 +3,7 @@ import type { HttpClient } from './HttpClient'
 import { $fetch } from 'ofetch'
 import { container } from '../config/inversify.config'
 import { TYPES } from '../config/inversify'
+import { HttpClientError } from '~/server/error/HttpClientError'
 
 // $fetchのモック
 vi.mock('ofetch', () => ({
@@ -174,7 +175,7 @@ describe('HttpClientImpl', () => {
   })
 
   describe('エラーハンドリング', () => {
-    it('APIエラー時に適切なエラーメッセージをスローすること', async () => {
+    it('APIエラー時にHttpClientErrorをスローすること', async () => {
       // エラーをモック
       const originalError = new Error('Network Error')
       mockFetch.mockRejectedValueOnce(originalError)
@@ -186,17 +187,17 @@ describe('HttpClientImpl', () => {
         expect.fail('エラーが発生しませんでした')
       } catch (error: unknown) {
         // エラーを適切な型にキャスト
-        const err = error as Error & { cause: unknown }
+        const err = error as HttpClientError
 
         // エラーメッセージを検証
-        expect(err).toBeInstanceOf(Error)
+        expect(err).toBeInstanceOf(HttpClientError)
         expect(err.message).toBe('Failed to fetch API: /api/test')
-        // causeプロパティを検証
-        expect(err.cause).toBe(originalError)
+        // originalErrorプロパティを検証
+        expect(err.originalError).toBe(originalError)
       }
     })
 
-    it('不明なエラー時にもcauseプロパティが設定されること', async () => {
+    it('不明なエラー時にもHttpClientErrorをスローすること', async () => {
       // 文字列エラーをモック
       const originalError = 'Unknown error'
       mockFetch.mockRejectedValueOnce(originalError)
@@ -208,13 +209,13 @@ describe('HttpClientImpl', () => {
         expect.fail('エラーが発生しませんでした')
       } catch (error: unknown) {
         // エラーを適切な型にキャスト
-        const err = error as Error & { cause: unknown }
+        const err = error as HttpClientError
 
         // エラーメッセージを検証
-        expect(err).toBeInstanceOf(Error)
+        expect(err).toBeInstanceOf(HttpClientError)
         expect(err.message).toBe('Failed to fetch API: /api/test')
-        // causeプロパティを検証
-        expect(err.cause).toBe(originalError)
+        // originalErrorプロパティを検証
+        expect(err.originalError).toBe(originalError)
       }
     })
   })

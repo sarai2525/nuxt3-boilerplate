@@ -2,6 +2,7 @@ import { injectable } from 'inversify'
 import type { HttpClient } from './HttpClient'
 import type { HttpClientOptions, HttpClientResponse, HttpMethod } from '@/types/HttpClient'
 import { $fetch, type FetchOptions } from 'ofetch'
+import { HttpClientError } from '@/server/error/HttpClientError'
 
 @injectable()
 export class HttpClientImpl implements HttpClient {
@@ -77,7 +78,7 @@ export class HttpClientImpl implements HttpClient {
         headers: {},
       }
     } catch (error) {
-      throw new Error(`Failed to fetch API: ${url}`, { cause: error })
+      throw new HttpClientError(`Failed to fetch API: ${url}`, { cause: error })
     }
   }
 }
