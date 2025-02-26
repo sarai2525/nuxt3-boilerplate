@@ -57,11 +57,19 @@ const config = defineNuxtConfig({
     esbuild: {
       options: {
         target: 'esnext',
+        tsconfigRaw: {
+          compilerOptions: {
+            experimentalDecorators: true,
+          },
+        },
       },
     },
     prerender: {
       crawlLinks: true,
       failOnError: false,
+    },
+    externals: {
+      inline: ['reflect-metadata'],
     },
   },
   css: ['@/assets/scss/style.scss'],
@@ -81,6 +89,13 @@ const config = defineNuxtConfig({
     plugins: {
       autoprefixer: {},
     },
+  },
+  typescript: {
+    strict: true,
+    typeCheck: false,
+  },
+  imports: {
+    dirs: ['server/**', 'stores/**'],
   },
 })
 
