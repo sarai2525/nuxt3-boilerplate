@@ -1,9 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { Container } from 'inversify'
-import { HttpClientImpl } from './HttpClientImpl'
 import type { HttpClient } from './HttpClient'
-import { TYPES } from '../config/inversify'
 import { $fetch } from 'ofetch'
+import { container } from '../config/inversify.config'
+import { TYPES } from '../config/inversify'
 
 // $fetchのモック
 vi.mock('ofetch', () => ({
@@ -11,7 +10,6 @@ vi.mock('ofetch', () => ({
 }))
 
 describe('HttpClientImpl', () => {
-  let container: Container
   let httpClient: HttpClient
   const mockFetch = $fetch as unknown as ReturnType<typeof vi.fn>
 
@@ -19,11 +17,7 @@ describe('HttpClientImpl', () => {
     // モックをリセット
     vi.clearAllMocks()
 
-    // DIコンテナの設定
-    container = new Container()
-    container.bind<HttpClient>(TYPES.HttpClient).to(HttpClientImpl)
-
-    // HttpClientのインスタンスを取得
+    // 既存のコンテナからHttpClientのインスタンスを取得
     httpClient = container.get<HttpClient>(TYPES.HttpClient)
   })
 
@@ -87,7 +81,7 @@ describe('HttpClientImpl', () => {
       const postData = { name: 'test', value: 42 }
 
       // テスト対象のメソッドを実行
-      const result = await httpClient.post<typeof mockResponse>('/api/test', postData)
+      const result = await httpClient.post<typeof mockResponse, typeof postData>('/api/test', postData)
 
       // 検証
       expect(mockFetch).toHaveBeenCalledTimes(1)
@@ -114,7 +108,7 @@ describe('HttpClientImpl', () => {
       }
 
       // テスト対象のメソッドを実行
-      const result = await httpClient.post<typeof mockResponse>('/api/test', postData, options)
+      const result = await httpClient.post<typeof mockResponse, typeof postData>('/api/test', postData, options)
 
       // 検証
       expect(mockFetch).toHaveBeenCalledTimes(1)
@@ -141,7 +135,7 @@ describe('HttpClientImpl', () => {
       const putData = { id: 1, name: 'updated-test' }
 
       // テスト対象のメソッドを実行
-      const result = await httpClient.put<typeof mockResponse>('/api/test/1', putData)
+      const result = await httpClient.put<typeof mockResponse, typeof putData>('/api/test/1', putData)
 
       // 検証
       expect(mockFetch).toHaveBeenCalledTimes(1)

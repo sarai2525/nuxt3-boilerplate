@@ -17,7 +17,7 @@ export interface HttpClient {
    * @param data リクエストボディ
    * @param options その他のリクエストオプション
    */
-  post<T>(url: string, data?: unknown, options?: HttpClientOptions): Promise<HttpClientResponse<T>>
+  post<T, D = unknown>(url: string, data?: D, options?: HttpClientOptions): Promise<HttpClientResponse<T>>
 
   /**
    * PUTリクエストを実行します
@@ -25,7 +25,7 @@ export interface HttpClient {
    * @param data リクエストボディ
    * @param options その他のリクエストオプション
    */
-  put<T>(url: string, data?: unknown, options?: HttpClientOptions): Promise<HttpClientResponse<T>>
+  put<T, D = unknown>(url: string, data?: D, options?: HttpClientOptions): Promise<HttpClientResponse<T>>
 
   /**
    * DELETEリクエストを実行します
@@ -34,5 +34,3 @@ export interface HttpClient {
    */
   delete<T>(url: string, options?: HttpClientOptions): Promise<HttpClientResponse<T>>
 }
-
-export const HTTP_CLIENT_TOKEN = Symbol.for('HttpClient')

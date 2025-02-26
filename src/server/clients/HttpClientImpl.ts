@@ -20,7 +20,7 @@ export class HttpClientImpl implements HttpClient {
    * @param data リクエストボディ
    * @param options その他のリクエストオプション
    */
-  async post<T>(url: string, data?: unknown, options?: HttpClientOptions): Promise<HttpClientResponse<T>> {
+  async post<T, D = unknown>(url: string, data?: D, options?: HttpClientOptions): Promise<HttpClientResponse<T>> {
     return this.fetch<T>(url, 'POST', data, options)
   }
 
@@ -30,7 +30,7 @@ export class HttpClientImpl implements HttpClient {
    * @param data リクエストボディ
    * @param options その他のリクエストオプション
    */
-  async put<T>(url: string, data?: unknown, options?: HttpClientOptions): Promise<HttpClientResponse<T>> {
+  async put<T, D = unknown>(url: string, data?: D, options?: HttpClientOptions): Promise<HttpClientResponse<T>> {
     return this.fetch<T>(url, 'PUT', data, options)
   }
 
@@ -50,10 +50,10 @@ export class HttpClientImpl implements HttpClient {
    * @param data リクエストボディ（POST/PUTで使用）
    * @param options その他のリクエストオプション
    */
-  private async fetch<T>(
+  private async fetch<T, D = unknown>(
     url: string,
     method: HttpMethod,
-    data?: unknown,
+    data?: D,
     options?: HttpClientOptions,
   ): Promise<HttpClientResponse<T>> {
     try {
