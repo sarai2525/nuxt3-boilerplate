@@ -8,8 +8,7 @@
     ":prHourlyLimitNone",
     ":timezone(Asia/Tokyo)"
   ],
-  "schedule": ["every 12 hours"],
-  "automergeSchedule": ["every 12 hours"],
+  "schedule": ["every 2 weeks on monday"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
