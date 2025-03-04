@@ -28,7 +28,6 @@ const productionConfig = {
 const config = defineNuxtConfig({
   ssr: true,
   srcDir: 'src',
-  devtools: { enabled: isDev },
   debug: isDev,
   telemetry: false,
   app: {
@@ -80,6 +79,14 @@ const config = defineNuxtConfig({
   postcss: {
     plugins: {
       autoprefixer: {},
+    },
+  },
+  ignore: ['**/*.test.*', '**/*.spec.*', '**/tests/**'],
+  eslint: {
+    config: {
+      stylistic: {
+        semi: false,
+      },
     },
   },
 })
