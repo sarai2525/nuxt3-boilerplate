@@ -34,7 +34,6 @@
     "@vee-validate/nuxt": "4.15.0",
     "@vee-validate/zod": "4.15.0",
     "@vitest/coverage-v8": "2.1.8",
-    "@vue/eslint-config-prettier": "10.2.0",
     "@vue/test-utils": "2.4.6",
     "@zadigetvoltaire/nuxt-gtm": "0.0.13",
     "dayjs": "1.11.13",
