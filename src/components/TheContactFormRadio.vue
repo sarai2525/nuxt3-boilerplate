@@ -1,6 +1,10 @@
 <template>
   <div>
-    <label v-for="(options, index) in item.options" :key="index" :for="options.label">
+    <label
+      v-for="(options, index) in item.options"
+      :key="index"
+      :for="options.label"
+    >
       <Field
         :id="options.label"
         v-model="modelValue"
@@ -14,16 +18,21 @@
       {{ options.label }}
     </label>
   </div>
-  <ErrorMessage :name="item.name" as="p" />
+  <ErrorMessage
+    :name="item.name"
+    as="p"
+  />
 </template>
+
 <script setup lang="ts">
-  import { Field, ErrorMessage } from 'vee-validate'
-  import type { FormSchemaType } from '@/schema/contactForm'
+import { Field, ErrorMessage } from 'vee-validate'
+import type { FormSchemaType } from '@/schema/contactForm'
 
   type PropType = {
     item: FormSchemaType
   }
-  defineProps<PropType>()
-  const modelValue = defineModel<string | readonly string[]>()
+defineProps<PropType>()
+const modelValue = defineModel<string | readonly string[]>()
 </script>
+
 <style lang="scss" module></style>

@@ -1,17 +1,16 @@
 {
-  "eslint.experimental.useFlatConfig": true,
+  "eslint.useFlatConfig": true,
   "eslint.workingDirectories": ["./"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
   "stylelint.validate": ["css", "scss", "vue"],
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
   "[json]": {
     "editor.formatOnSave": true
   },
-  "vitest.commandLine": "npx vitest",
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
   "editor.defaultFormatter": "esbenp.prettier-vscode"

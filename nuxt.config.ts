@@ -28,8 +28,7 @@ const productionConfig = {
 const config = defineNuxtConfig({
   ssr: true,
   srcDir: 'src',
-  devtools: { enabled: isDev },
-  debug: isDev,
+  debug: process.env.NODE_ENV === 'development',
   telemetry: false,
   app: {
     head: {
@@ -45,10 +44,13 @@ const config = defineNuxtConfig({
     // baseURL: isDev ? '' : '/lp', // TODO: デプロイ先がルートディレクトリでない場合、必ず指定しなければならない
   },
   vite: {
+    build: {
+      target: 'esnext',
+    },
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/scss/var/index.scss" as var;',
+          additionalData: '@import "@/assets/scss/variables.scss";',
         },
       },
     },
@@ -80,6 +82,14 @@ const config = defineNuxtConfig({
   postcss: {
     plugins: {
       autoprefixer: {},
+    },
+  },
+  ignore: ['**/*.test.*', '**/*.spec.*', '**/tests/**'],
+  eslint: {
+    config: {
+      stylistic: {
+        semi: false,
+      },
     },
   },
 })
