@@ -39,7 +39,7 @@
     "@zadigetvoltaire/nuxt-gtm": "0.0.13",
     "dayjs": "1.11.13",
     "eslint": "9.19.0",
-    "happy-dom": "14.12.3",
+    "happy-dom": "17.1.9",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
     "nuxt": "3.15.2",
