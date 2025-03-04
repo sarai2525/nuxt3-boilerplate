@@ -4,29 +4,31 @@
     "config:recommended",
     "group:allNonMajor",
     ":separateMultipleMajorReleases",
-    "schedule:earlyMondays",
     ":prConcurrentLimitNone",
     ":prHourlyLimitNone",
     ":timezone(Asia/Tokyo)"
   ],
-  "schedule": ["every 1 hour after 00:00 and before 23:59 every day"],
-  "automergeSchedule": ["every 1 hour after 00:00 and before 23:59 every day"],
+  "schedule": ["every 12 hours"],
+  "automergeSchedule": ["every 12 hours"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     },
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchPackagePatterns": ["eslint"],
       "groupName": "eslint",
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     },
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchPackagePatterns": ["nuxt"],
       "groupName": "nuxt",
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     },
     {
       "matchUpdateTypes": ["major"],
@@ -39,5 +41,9 @@
     "enabled": true,
     "automerge": true
   },
-  "rangeStrategy": "bump"
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 10,
+  "branchConcurrentLimit": 10,
+  "dependencyDashboard": true,
+  "rangeStrategy": "auto"
 }
