@@ -17,17 +17,17 @@
     },
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackagePatterns": ["eslint"],
       "groupName": "eslint",
       "automerge": true,
-      "automergeType": "branch"
+      "automergeType": "branch",
+      "matchPackageNames": ["/eslint/"]
     },
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackagePatterns": ["nuxt"],
       "groupName": "nuxt",
       "automerge": true,
-      "automergeType": "branch"
+      "automergeType": "branch",
+      "matchPackageNames": ["/nuxt/"]
     },
     {
       "matchUpdateTypes": ["major"],
