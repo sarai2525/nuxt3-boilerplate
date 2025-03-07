@@ -36,8 +36,8 @@ importers:
         specifier: 22.13.9
         version: 22.13.9
       '@unocss/reset':
-        specifier: 0.65.4
-        version: 0.65.4
+        specifier: 66.0.0
+        version: 66.0.0
       '@vee-validate/nuxt':
         specifier: 4.15.0
         version: 4.15.0(magicast@0.3.5)(vue@3.5.13(typescript@5.8.2))
@@ -1377,8 +1377,8 @@ packages:
     peerDependencies:
       vue: '>=2.7 || >=3'
 
-  '@unocss/reset@0.65.4':
-    resolution: {integrity: sha512-m685H0KFvVMz6R2i5GDIFv4RS9Z7y2G8hJK7xg2OWli+7w8l2ZMihYvXKofPsst4q/ms8EgKXpWc/qqUOTucvA==}
+  '@unocss/reset@66.0.0':
+    resolution: {integrity: sha512-YLFz/5yT7mFJC8JSmIUA5+bS3CBCJbtztOw+8rWzjQr/BEVSGuihWUUpI2Df6VVxXIXxKanZR6mIl59yvf+GEA==}
 
   '@vee-validate/nuxt@4.15.0':
     resolution: {integrity: sha512-AhQHPLxH4tTf35op+ifkBhnnRwv/EzT8Fi9PQlEwKyLGZgepFQO1qTm6IyaA6aoSKcFWHz3R3hyMrMQdXbiOxQ==}
@@ -6994,7 +6994,7 @@ snapshots:
       unhead: 1.11.19
       vue: 3.5.13(typescript@5.8.2)
 
-  '@unocss/reset@0.65.4': {}
+  '@unocss/reset@66.0.0': {}
 
   '@vee-validate/nuxt@4.15.0(magicast@0.3.5)(vue@3.5.13(typescript@5.8.2))':
     dependencies:
