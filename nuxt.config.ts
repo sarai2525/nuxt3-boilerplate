@@ -89,6 +89,7 @@ const config = defineNuxtConfig({
     config: {
       stylistic: {
         semi: false,
+        quotes: 'single',
       },
     },
   },

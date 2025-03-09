@@ -11,12 +11,12 @@
     "postinstall": "nuxt prepare",
     "prepare": "husky install && cp .env.example .env",
     "lint:script": "eslint --fix --ignore-pattern .gitignore .",
-    "lint:prettier": "prettier --write",
+    "lint:prettier": "npx prettier \"**/*.{md,json,yml,yaml}\" --write",
     "lint:style": "stylelint --fix --config stylelint.config.cjs",
     "test": "vitest"
   },
   "lint-staged": {
-    "*.{.js,ts,vue,cjs,mjs}": "pnpm lint:script",
+    "*.{js,ts,vue,cjs,mjs}": "pnpm lint:script",
     "*.{md,json,yml,yaml}": "pnpm lint:prettier",
     "*.{vue,scss,css}": "pnpm lint:style"
   },
@@ -40,7 +40,6 @@
     "eslint": "9.21.0",
     "happy-dom": "17.2.2",
     "husky": "9.1.7",
-    "lint-staged": "15.4.3",
     "nuxt": "3.15.4",
     "nuxt-gtag": "3.0.2",
     "ofetch": "1.4.1",
