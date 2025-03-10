@@ -29,16 +29,16 @@
     "@nuxtjs/sitemap": "7.2.6",
     "@nuxtjs/stylelint-module": "5.2.0",
     "@nuxtjs/tailwindcss": "6.13.1",
-    "@types/node": "22.13.9",
+    "@types/node": "22.13.10",
     "@unocss/reset": "66.0.0",
     "@vee-validate/nuxt": "4.15.0",
     "@vee-validate/zod": "4.15.0",
-    "@vitest/coverage-v8": "3.0.7",
+    "@vitest/coverage-v8": "3.0.8",
     "@vue/test-utils": "2.4.6",
     "@zadigetvoltaire/nuxt-gtm": "0.0.13",
     "dayjs": "1.11.13",
     "eslint": "9.21.0",
-    "happy-dom": "17.2.2",
+    "happy-dom": "17.4.3",
     "husky": "9.1.7",
     "nuxt": "3.15.4",
     "nuxt-gtag": "3.0.2",
@@ -51,7 +51,7 @@
     "stylelint-order": "6.0.4",
     "typescript": "5.8.2",
     "vee-validate": "4.15.0",
-    "vitest": "3.0.7",
+    "vitest": "3.0.8",
     "vue": "3.5.13",
     "vue-router": "4.5.0",
     "zhead": "2.2.4",
@@ -62,5 +62,5 @@
     "ios >= 15",
     "not dead"
   ],
-  "packageManager": "pnpm@10.5.2"
+  "packageManager": "pnpm@10.6.2"
 }
