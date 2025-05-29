@@ -48,7 +48,7 @@
     "sass-loader": "16.0.5",
     "stylelint": "16.15.0",
     "stylelint-config-recommended-vue": "1.6.0",
-    "stylelint-order": "6.0.4",
+    "stylelint-order": "7.0.0",
     "typescript": "5.8.2",
     "vee-validate": "4.15.0",
     "vitest": "3.0.7",
